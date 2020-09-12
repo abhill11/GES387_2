@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hill, Blake Lab 2</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    </head>
+
+    <body>
+        <h2>Airports I have flown to/from</h>
+        <div id="map" style="height: 800px;
+                            border: 3px solid black;"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [35,-55],
+              zoom: 4
+          });
+
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 4,
+               minZoom: 4
+            }).addTo(map);
+
+            var passporticon = L.icon({
+                iconUrl: 'passport.png', // url that links to the icon image file
+                iconSize:     [24, 24], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+
+            var planeticketicon = L.icon({
+                iconUrl: 'planeticket.png', // url that links to the icon image file
+                iconSize:     [24, 24], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+// make variables for markers
+            var abq = L.marker([35.0433,-106.6129], {icon: planeticketicon}).addTo(map);
+            var atl = L.marker([33.6407, -84.4277], {icon: planeticketicon}).addTo(map);
+            var iad = L.marker([38.9531,-77.4565], {icon: planeticketicon}).addTo(map);
+            var jfk = L.marker([40.6413,-73.7781], {icon: planeticketicon}).addTo(map);
+            var ord = L.marker([41.9742,-87.9073], {icon: planeticketicon}).addTo(map);
+            var tys = L.marker([35.8108,-83.9939], {icon: planeticketicon}).addTo(map);
+// US airports above, international airports below
+            var bcn = L.marker([41.2974,2.0833], {icon: passporticon}).addTo(map);
+            var czm = L.marker([20.5112,-86.9301], {icon: passporticon}).addTo(map);
+            var grx = L.marker([37.1877,-3.778], {icon: passporticon}).addTo(map);
+            var lis = L.marker([38.7756,-9.1354], {icon: passporticon}).addTo(map);
+// make variables for pics to include in marker popup
+            var abqpic = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/SandiaMtnNM.jpg" alt="Sandía Peak" width="250">';
+            var atlpic = '<img src="https://www.wabe.org/wp-content/uploads/2020/04/Earth_Goddess__Media_Sml-e1585855270547.jpg" alt="Botanic Garen Goddess" width="250">';
+            var iadpic = '<img src="https://eventective-media.azureedge.net/2450288_lg.jpg" alt="Smithsonian" width="250">';
+            var jfkpic = '<img src="https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://timeincsecure-a.akamaihd.net/rtmp_uds/3281700261001/201911/2677/3281700261001_6099849957001_6099810748001-vs.jpg?pubId=3281700261001&videoId=6099810748001&w=1280&h=720&q=90&c=cc" alt="Central Park" width="250">';
+            var ordpic = '<img src="https://img5.goodfon.com/wallpaper/nbig/8/ac/buckingham-fountain-chicago-illinois-bukingemskii-fontan-c-1.jpg" alt="Buckingham Fountain" width="250">';
+            var tyspic = '<img src="https://archdesign.utk.edu/wp-content/uploads/2017/11/colorfulknoxville.jpg" alt="Sunsphere" width="250">';
+            var bcnpic = '<img src="https://www.joysoftraveling.com/wp-content/uploads/2019/12/36156935825-0121a2c49b-k-800x533-1-768x512.jpg" alt="Casa Batlló" width="250">';
+            var czmpic = '<img src="https://www.besocialplayadelcarmen.mx/wp-content/uploads/2016/03/1933334_568800916617000_1123107458787718427_o.jpg" alt="Planetario de Cozumel" width="250">';
+            var grxpic = '<img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/11/12/Recortada/img_azarzoso_20180808-113310_imagenes_lv_terceros_istock-641978726-0454_4_5_1250745711-kCZH-U452869755832S4D-992x558@LaVanguardia-Web.jpg" alt="Granada Skyline Alhambra" width="250">';
+            var lispic = '<img src="https://moraremportugal.com/wp-content/uploads/2018/06/capa-8-e1528137415986.jpg" alt="Lisboa Buildings" width="250">';
+
+// make popups display at markers with text and photo of some feature of the city
+
+              abq.bindPopup('<p style="color:green; font-weight:bold"> ABQ &#160 Albuquerque, NM</p>'+ abqpic + '<p>Sandía Mountains</p>');
+              atl.bindPopup('<p style="color:coral; font-weight:bold"> ATL &#160 Atlanta, GA</p>'+ atlpic + '<p>ATL Botanical Garden Earth Goddess</p>');
+              iad.bindPopup('<p style="color:limegreen; font-weight:bold"> IAD &#160 Washington, DC</p>'+ iadpic + '<p>Smithsonian Natural Museum of Natural History</p>');
+              jfk.bindPopup('<p style="color:blue; font-weight:bold"> JFK &#160 New York City, NY</p>'+ jfkpic + '<p>Central Park</p>');
+              ord.bindPopup('<p style="color:violet; font-weight:bold"> ORD &#160 Chicago, IL</p>'+ ordpic + '<p>Buckingham Fountain</p>');
+              tys.bindPopup('<p style="color:orange; font-weight:bold"> TYS &#160 Knoxville, TN</p>'+ tyspic + '<p>Sunsphere & World&#39s Fair Park</p>');
+// US airports above, international below
+              bcn.bindPopup('<p style="color:maroon; font-weight:bold"> BCN &#160 Barcelona, ES</p>'+ bcnpic + '<p>Casa Batlló</p>');
+              czm.bindPopup('<p style="color:red; font-weight:bold"> CZM &#160 Cozumel, MX</p>'+ czmpic + '<p>Planetario de Cozumel</p>');
+              grx.bindPopup('<p style="color:purple; font-weight:bold"> GRX &#160 Granada, ES</p>'+ grxpic + '<p>Skyline and Alhambra</p>');
+              lis.bindPopup('<p style="color:black; font-weight:bold"> LIS &#160 Lisboa, PT</p>'+ lispic + '<p>Alfama District</p>');
+
+        </script>
+   </body>
+</html>
