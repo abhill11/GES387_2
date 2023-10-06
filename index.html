@@ -61,6 +61,7 @@
             var lis = L.marker([38.7756,-9.1354], {icon: passporticon}).addTo(map);
             var fra = L.marker([50.03333, 8.570556], {icon: passporticon}).addTo(map);
             var ber = L.marker([52.3667, 13.5020], {icon: passporticon}).addTo(map);
+            var kef = L.marker([63.9963, 22.6237], {icon: passporticon}).addTo(map);
 // make variables for pics to include in marker popup
             var abqpic = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/SandiaMtnNM.jpg" alt="Sandía Peak" width="250">';
             var atlpic = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya9SRRzeyvv92eaU5yINs2cSq-r3EcND9zg&usqp=CAU" alt="Botanic Garen Goddess" width="250">';
@@ -74,7 +75,8 @@
             var lispic = '<img src="https://www.golisbon.com/images/lisbon/alfama-lisbon.jpg" alt="Lisboa Buildings" width="250">';
             var phxpic = '<img src="" alt="" width="250">';
             var frapic = '<img src="" alt="" width="250">';
-            var berpic = '<img src="" alt="" width="250">';      
+            var berpic = '<img src="" alt="" width="250">';
+            var kefpic = '<img src="" alt="" width="250">';      
 // make popups display at markers with text and photo of some feature of the city
 
               abq.bindPopup('<p style="color:green; font-weight:bold"> ABQ &#160 Albuquerque, NM</p>'+ abqpic + '<p>Sandía Mountains</p>');
@@ -91,6 +93,7 @@
               lis.bindPopup('<p style="color:black; font-weight:bold"> LIS &#160 Lisboa, PT</p>'+ lispic + '<p>Alfama District</p>');
               fra.bindPopup('<p style="color:orange; font-weight:bold"> FRA &#160 Frankfurt, DE</p>'+ frapic + '<p> & & </p>');
               ber.bindPopup('<p style="color:orange; font-weight:bold"> BER &#160 Berlin, DE</p>'+ berpic + '<p> & & </p>');
+              kef.bindPopup('<p style="color:orange; font-weight:bold"> KEF &#160 Keflavík, IS</p>'+ kefpic + '<p> & & </p>')
         </script>
    </body>
 </html>
