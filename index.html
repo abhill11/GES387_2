@@ -46,13 +46,30 @@
                 iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
                 popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
             });
+
+            // adding these two because they're too close together and needed to be offset
+            var planeticketiconORD = L.icon({
+                iconUrl: 'planeticket.png', // url that links to the icon image file
+                iconSize:     [26, 24], // size of the icon image in pixels
+                iconAnchor:   [25, 25], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -20] // point from which the popup should open, relative to the iconAnchor
+            });
+
+            var planeticketiconMDW = L.icon({
+                iconUrl: 'planeticket.png', // url that links to the icon image file
+                iconSize:     [26, 24], // size of the icon image in pixels
+                iconAnchor:   [10, 10], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
 // make variables for markers
             var abq = L.marker([35.0433,-106.6129], {icon: planeticketicon}).addTo(map);
             var atl = L.marker([33.6407, -84.4277], {icon: planeticketicon}).addTo(map);
             var iad = L.marker([38.9531,-77.4565], {icon: planeticketicon}).addTo(map);
             var jfk = L.marker([40.6413,-73.7781], {icon: planeticketicon}).addTo(map);
-            var ord = L.marker([41.9742,-87.9073], {icon: planeticketicon}).addTo(map);
-            var tys = L.marker([35.8108,-83.9939], {icon: planeticketicon}).addTo(map);
+            var ord = L.marker([41.9742,-87.9073], {icon: planeticketiconORD}).addTo(map);
+            var mdw = L.marker([41.7868,-87.7522], {icon: planeticketiconMDW}).addTo(map);
+            var tri = L.marker([36.4817, -82.4077], {icon: planeticketicon}).addTo(map);
+            var tys = L.marker([35.8108, -83.9939], {icon: planeticketicon}).addTo(map);
             var phx = L.marker([33.4352, -112.0101], {icon: planeticketicon}).addTo(map);
 // US airports above, international airports below
             var bcn = L.marker([41.2974,2.0833], {icon: passporticon}).addTo(map);
@@ -63,28 +80,33 @@
             var ber = L.marker([52.3667, 13.5020], {icon: passporticon}).addTo(map);
             var kef = L.marker([63.9963, -22.6237], {icon: passporticon}).addTo(map);
 // make variables for pics to include in marker popup
-            var abqpic = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/SandiaMtnNM.jpg" alt="Sandía Peak" width="250">';
-            var atlpic = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya9SRRzeyvv92eaU5yINs2cSq-r3EcND9zg&usqp=CAU" alt="Botanic Garen Goddess" width="250">';
-            var iadpic = '<img src="https://eventective-media.azureedge.net/3037770_lg.jpg" alt="Smithsonian" width="250">';
-            var jfkpic = '<img src="https://nypost.com/wp-content/uploads/sites/2/2018/07/central-park-conservancy.jpg?quality=80&strip=all" alt="Central Park" width="250">';
-            var ordpic = '<img src="https://img5.goodfon.com/wallpaper/nbig/8/ac/buckingham-fountain-chicago-illinois-bukingemskii-fontan-c-1.jpg" alt="Buckingham Fountain" width="250">';
-            var tyspic = '<img src="https://archdesign.utk.edu/wp-content/uploads/2017/11/colorfulknoxville.jpg" alt="Sunsphere" width="250">';
-            var bcnpic = '<img src="https://www.joysoftraveling.com/wp-content/uploads/2019/12/36156935825-0121a2c49b-k-800x533-1-768x512.jpg" alt="Casa Batlló" width="250">';
-            var czmpic = '<img src="https://static.wixstatic.com/media/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg/v1/fill/w_550,h_552,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg" alt="Planetario de Cozumel" width="250">';
-            var grxpic = '<img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/11/12/Recortada/img_azarzoso_20180808-113310_imagenes_lv_terceros_istock-641978726-0454_4_5_1250745711-kCZH-U452869755832S4D-992x558@LaVanguardia-Web.jpg" alt="Granada Skyline Alhambra" width="250">';
-            var lispic = '<img src="https://www.golisbon.com/images/lisbon/alfama-lisbon.jpg" alt="Lisboa Buildings" width="250">';
-            var phxpic = '<img src="https://fullsuitcase.com/wp-content/uploads/2021/06/Phoenix-AZ-city-skyline.jpg.webp" alt="view of Phoenix skyline behind a row of colorful townhomes" width="250">';
-            var frapic = '<img src="https://traveler.marriott.com/wp-content/uploads/2022/07/river-main-frankfurt-germany.jpg" alt="Frankfort cityscape and waterfront" width="250">';
-            var berpic = '<img src="https://afar.brightspotcdn.com/dims4/default/3d69b14/2147483647/strip/false/crop/800x500+0+0/resize/800x500!/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F48%2F6a%2F03f09e9631bd2ff1dc59604e7b8d%2Foriginal-2d322958e62ed061755a7e7ef90d103c.jpg" alt="AFAR Media, Memorial to the Murdered Jews of Europe" width="250">';
-            var kefpic = '<img src="https://www.isavia.is/media/1/regnbogi.jpg?mode=crop&width=350&height=350&anchor=middlecenter" alt="Rainbow sculpture by Rúrí Regnbogi" width="250">';      
-// make popups display at markers with text and photo of some feature of the city
+            var abqpic = '<img src="AirportImgs/SandiaMtnNM.jpg" alt="Sandía Peak, src: https://upload.wikimedia.org/wikipedia/commons/7/7c/SandiaMtnNM.jpg" width="250">';
+            var atlpic = '<img src="AirportImgs/ATLBotanicalGoddess.jpg " alt="Botanic Garen Goddess, src: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya9SRRzeyvv92eaU5yINs2cSq-r3EcND9zg&usqp=CAU" width="250">';
+            var iadpic = '<img src="AirportImgs/Smithsonian_lg.jpg " alt="Smithsonian, src: https://eventective-media.azureedge.net/3037770_lg.jpg" width="250">';
+            var jfkpic = '<img src="AirportImgs/central-park-conservancy.jpg " alt="Central Park, src: https://nypost.com/wp-content/uploads/sites/2/2018/07/central-park-conservancy.jpg?quality=80&strip=all" width="250">';
+            var ordpic = '<img src="AirportImgs/buckingham-fountain-chicago-illinois-bukingemskii-fontan-c-1.jpg " alt="Buckingham Fountain, src: https://img5.goodfon.com/wallpaper/nbig/8/ac/buckingham-fountain-chicago-illinois-bukingemskii-fontan-c-1.jpg" width="250">';
+            var mdwpic = '<img src="AirportImgs/frozenlakeMich.jpg " alt="Lake Michigan frozen over by Navy Pier and downtown Chicago in the background, src: https://www.dtnpf.com/mydtn-public-core-portlet/servlet/GetStoredImage?symbolicName=originalX30958YsiteXDTNYcatalogXcatalog&category=CMS" width="250">';
+            var tyspic = '<img src="AirportImgs/colorfulknoxville.jpg " alt="Sunsphere and skyline, src: https://archdesign.utk.edu/wp-content/uploads/2017/11/colorfulknoxville.jpg" width="250">';
+            var tripic = '<img src="AirportImgs/BuffaloMountainJC.jpg " alt="fall foliage from Buffalo Mountain, Johnson City, TN, src: https://www.wjhl.com/wp-content/uploads/sites/98/2022/10/45801742_262143754501855_9090565205611511808_n.jpg?w=876&h=493&crop=1" width="250">';
+            var bcnpic = '<img src="AirportImgs/CasaBatllo.jpg " alt="Casa Batlló, src: https://www.joysoftraveling.com/wp-content/uploads/2019/12/36156935825-0121a2c49b-k-800x533-1-768x512.jpg" width="250">';
+            var czmpic = '<img src="AirportImgs/Planetario.jpg " alt="Planetario de Cozumel, src: https://static.wixstatic.com/media/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg/v1/fill/w_550,h_552,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg" width="250">';
+            var grxpic = '<img src="AirportImgs/Alhambra.jpg " alt="Granada Skyline and Alhambra, src: https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/11/12/Recortada/img_azarzoso_20180808-113310_imagenes_lv_terceros_istock-641978726-0454_4_5_1250745711-kCZH-U452869755832S4D-992x558@LaVanguardia-Web.jpg" width="250">';
+            var lispic = '<img src="AirportImgs/Alfama.jpg " alt="Tile rooftops of the Alfama district in Lisboa, src: https://www.golisbon.com/images/lisbon/alfama-lisbon.jpg" width="250">';
+            var phxpic = '<img src="AirportImgs/Phoenix-AZ-city-skyline.jpg.jpg " alt="view of Phoenix skyline behind a row of colorful townhomes, src: https://fullsuitcase.com/wp-content/uploads/2021/06/Phoenix-AZ-city-skyline.jpg.webp" width="250">';
+            var frapic = '<img src="AirportImgs/AmMain.jpg " alt="Frankfort cityscape and waterfront, src: https://traveler.marriott.com/wp-content/uploads/2022/07/river-main-frankfurt-germany.jpghttps://traveler.marriott.com/wp-content/uploads/2022/07/river-main-frankfurt-germany.jpg" width="250">';
+            var berpic = '<img src="AirportImgs/MemorialMurderedJews.jpg " alt="AFAR Media, Memorial to the Murdered Jews of Europe, src: https://afar.brightspotcdn.com/dims4/default/3d69b14/2147483647/strip/false/crop/800x500+0+0/resize/800x500!/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F48%2F6a%2F03f09e9631bd2ff1dc59604e7b8d%2Foriginal-2d322958e62ed061755a7e7ef90d103c.jpg" width="250">';
+            var kefpic = '<img src="AirportImgs/regnbogi.jpg " alt="Rainbow sculpture by Rúrí Regnbogi, src: https://www.isavia.is/media/1/regnbogi.jpg?mode=crop&width=350&height=350&anchor=middlecenter" width="250">';    
+             
+            // make popups display at markers with text and photo of some feature of the city
 
               abq.bindPopup('<p style="color:green; font-weight:bold"> ABQ &#160 Albuquerque, NM</p>'+ abqpic + '<p>Sandía Mountains</p>');
               atl.bindPopup('<p style="color:coral; font-weight:bold"> ATL &#160 Atlanta, GA</p>'+ atlpic + '<p>ATL Botanical Garden Earth Goddess</p>');
               iad.bindPopup('<p style="color:limegreen; font-weight:bold"> IAD &#160 Washington, DC</p>'+ iadpic + '<p>Smithsonian Natural Museum of Natural History</p>');
               jfk.bindPopup('<p style="color:blue; font-weight:bold"> JFK &#160 New York City, NY</p>'+ jfkpic + '<p>Central Park</p>');
               ord.bindPopup('<p style="color:violet; font-weight:bold"> ORD &#160 Chicago, IL</p>'+ ordpic + '<p>Buckingham Fountain</p>');
+              mdw.bindPopup('<p style="color:violet; font-weight:bold"> MDW &#160 Chicago, IL</p>' + mdwpic + '<p>Lake Michigan during the Polar Vortex of 2019')
               tys.bindPopup('<p style="color:orange; font-weight:bold"> TYS &#160 Knoxville, TN</p>'+ tyspic + '<p>Sunsphere & World&#39s Fair Park</p>');
+              tri.bindPopup('<p style="color:orange; font-weight:bold"> TYS &#160 Blountville, TN</p>'+ tripic + '<p>Appalachian fall foliage from Buffalo Mountain</p>');
               phx.bindPopup('<p style="color:orange; font-weight:bold"> PHX &#160 Phoenix, AZ</p>'+ phxpic + '<p> City skyline </p>');
 // US airports above, international below
               bcn.bindPopup('<p style="color:maroon; font-weight:bold"> BCN &#160 Barcelona, ES</p>'+ bcnpic + '<p>Casa Batlló</p>');
