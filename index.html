@@ -71,6 +71,7 @@
             var tri = L.marker([36.4817, -82.4077], {icon: planeticketicon}).addTo(map);
             var tys = L.marker([35.8108, -83.9939], {icon: planeticketicon}).addTo(map);
             var phx = L.marker([33.4352, -112.0101], {icon: planeticketicon}).addTo(map);
+            var phl = L.marker([39.8730, -75.2437], {icon: planeticketicon}).addTo(map);
 // US airports above, international airports below
             var bcn = L.marker([41.2974,2.0833], {icon: passporticon}).addTo(map);
             var czm = L.marker([20.5112,-86.9301], {icon: passporticon}).addTo(map);
@@ -92,7 +93,8 @@
             var czmpic = '<img src="AirportImgs/Planetario.jpg " alt="Planetario de Cozumel, src: https://static.wixstatic.com/media/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg/v1/fill/w_550,h_552,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4956db_02d60a95a1864c1bb6682b3fb6d3d778~mv2.jpg" width="250">';
             var grxpic = '<img src="AirportImgs/Alhambra.jpg " alt="Granada Skyline and Alhambra, src: https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/11/12/Recortada/img_azarzoso_20180808-113310_imagenes_lv_terceros_istock-641978726-0454_4_5_1250745711-kCZH-U452869755832S4D-992x558@LaVanguardia-Web.jpg" width="250">';
             var lispic = '<img src="AirportImgs/Alfama.jpg " alt="Tile rooftops of the Alfama district in Lisboa, src: https://www.golisbon.com/images/lisbon/alfama-lisbon.jpg" width="250">';
-            var phxpic = '<img src="AirportImgs/Phoenix-AZ-city-skyline.jpg.jpg " alt="view of Phoenix skyline behind a row of colorful townhomes, src: https://fullsuitcase.com/wp-content/uploads/2021/06/Phoenix-AZ-city-skyline.jpg.webp" width="250">';
+            var phxpic = '<img src="AirportImgs/Phoenix-AZ-city-skyline.jpg " alt="view of Phoenix skyline behind a row of colorful townhomes, src: https://fullsuitcase.com/wp-content/uploads/2021/06/Phoenix-AZ-city-skyline.jpg.webp" width="250">';
+            var phlpic = '<img src="AirportImgs/ElfrethAlley.jpg " alt="home facades down historic street Elfreth Alley, Philadephia, src: https://assets.vogue.com/photos/59e3f8fc78354517a202fc19/master/w_1920,c_limit/00-story-image-a-local-city-guide-to-philadelphia-pennsylvania.jpg" width="250">';
             var frapic = '<img src="AirportImgs/AmMain.jpg " alt="Frankfort cityscape and waterfront, src: https://traveler.marriott.com/wp-content/uploads/2022/07/river-main-frankfurt-germany.jpghttps://traveler.marriott.com/wp-content/uploads/2022/07/river-main-frankfurt-germany.jpg" width="250">';
             var berpic = '<img src="AirportImgs/MemorialMurderedJews.jpg " alt="AFAR Media, Memorial to the Murdered Jews of Europe, src: https://afar.brightspotcdn.com/dims4/default/3d69b14/2147483647/strip/false/crop/800x500+0+0/resize/800x500!/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F48%2F6a%2F03f09e9631bd2ff1dc59604e7b8d%2Foriginal-2d322958e62ed061755a7e7ef90d103c.jpg" width="250">';
             var kefpic = '<img src="AirportImgs/regnbogi.jpg " alt="Rainbow sculpture by Rúrí Regnbogi, src: https://www.isavia.is/media/1/regnbogi.jpg?mode=crop&width=350&height=350&anchor=middlecenter" width="250">';    
@@ -108,6 +110,7 @@
               tys.bindPopup('<p style="color:orange; font-weight:bold"> TYS &#160 Knoxville, TN</p>'+ tyspic + '<p>Sunsphere & World&#39s Fair Park</p>');
               tri.bindPopup('<p style="color:orange; font-weight:bold"> TYS &#160 Blountville, TN</p>'+ tripic + '<p>Appalachian fall foliage from Buffalo Mountain</p>');
               phx.bindPopup('<p style="color:orange; font-weight:bold"> PHX &#160 Phoenix, AZ</p>'+ phxpic + '<p> City skyline </p>');
+              phl.bindPopup('<p style="color:blue; font-weight:bold"> PHL &#160 Philadelphia, PA</p>' + phlpic + '<p>Historic Elfreth&#39;s Alley </p>');
 // US airports above, international below
               bcn.bindPopup('<p style="color:maroon; font-weight:bold"> BCN &#160 Barcelona, ES</p>'+ bcnpic + '<p>Casa Batlló</p>');
               czm.bindPopup('<p style="color:red; font-weight:bold"> CZM &#160 Cozumel, MX</p>'+ czmpic + '<p>Planetario de Cozumel</p>');
